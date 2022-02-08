@@ -3,7 +3,7 @@ https://stackabuse.com/creating-a-rest-api-with-django-rest-framework/
 python3 -m venv env
 
 . env/bin/activate
-
+cd ireligram
 
 
 pip3 install django
