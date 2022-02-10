@@ -12,6 +12,7 @@ pip3 install djangorestframework
 django-admin startproject ireligram
 
 python3 manage.py migrate
+python3 manage.py runserver
 python3 manage.py createsuperuser
 
 python3 manage.py makemigrations
