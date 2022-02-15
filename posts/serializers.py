@@ -5,9 +5,15 @@ from versatileimagefield.serializers import VersatileImageFieldSerializer
 
 
 class PostItemSerializer(FlexFieldsModelSerializer):
+    image = VersatileImageFieldSerializer(
+        sizes=[
+            ('full_size', 'url'),
+            ('thumbnail', 'thumbnail__100x100'),
+        ]
+    )
     class Meta:
         model = PostItem
-        fields = ['pk', 'title', 'content', 'created', 'updated', 'user_id']
+        fields = ['pk', 'content', 'created', 'updated', 'user_id', 'image']
         expandable_fields = {
             # 'category': ('reviews.CategorySerializer', {'many': True}),
             # 'sites': ('reviews.ProductSiteSerializer', {'many': True}),

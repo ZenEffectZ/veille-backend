@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from reviews.views import ProductViewSet, ImageViewSet
-from posts.views import PostItemViewSet, PostItemDetailApiView
+from posts.views import PostItemViewSet, PostItemDetailApiView, PostsUserApiView
 from rest_framework.routers import DefaultRouter
 from django.conf import settings
 from django.conf.urls.static import static
@@ -17,6 +17,7 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('posts/', PostItemViewSet.as_view()),
     path('posts/<int:post_id>', PostItemDetailApiView.as_view()),
+    path('user/<int:user_id>', PostsUserApiView.as_view()),
 ]
 
 if settings.DEBUG:

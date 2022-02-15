@@ -55,3 +55,13 @@ source venv/bin/activate
 | products/delete_product/:pk | DELETE  | delete_product()     |
 | products/delete_product/:pk | POST    | delete_product()     |
 |-----------------------------|---------|----------------------|
+
+/profile
+
+voir posts, edit
+
+coucou
+coucou123
+
+jakepaul
+jakepaul123

@@ -48,9 +48,9 @@ class PostItemViewSet(FlexFieldsMixin, APIView):
         '''
         print("ERROR", request.user.id)
         data = {
-            'title': request.data.get('title'),
             'content': request.data.get('content'),
-            'user_id': request.user.id
+            'user_id': request.user.id,
+            'image': request.data.get('image')
         }
         serializer = PostItemSerializer(data=data)
         if serializer.is_valid():
@@ -127,3 +127,18 @@ class PostItemDetailApiView(APIView):
             {"res": "Object deleted!"},
             status=status.HTTP_200_OK
         )
+
+
+class PostsUserApiView(FlexFieldsMixin, APIView):
+    # add permission to check if user is authenticated
+    permission_classes = [permissions.AllowAny]
+
+    def get(self, request, user_id, *args, **kwargs):
+        '''
+        List all the todo items for given requested user
+        '''
+        print(user_id)
+        # postitems = PostItem.objects.filter(user=request.user.id)
+        postitems = PostItem.objects.filter(user_id=user_id)
+        serializer = PostItemSerializer(postitems, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)

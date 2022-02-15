@@ -4,13 +4,16 @@ from versatileimagefield.fields import VersatileImageField, PPOIField
 
 
 class PostItem(models.Model):
-    title = models.CharField(max_length=100)
-    content = models.TextField()
+    content = models.TextField(null=True)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='postitems', related_query_name='postitem')
-    image = models.CharField(max_length=100, null=True)
+    image = VersatileImageField(
+        'Image',
+        upload_to='postimages/',
+        ppoi_field='image_ppoi'
+    )
+    image_ppoi = PPOIField()
     created = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now=True)
-
 
 class CommentItem(models.Model):
     title = models.CharField(max_length=255)
