@@ -38,6 +38,8 @@ python3 manage.py runserver
 
 https://medium.com/django-rest/django-rest-framework-b3028b3f0b9
 
+https://blog.logrocket.com/django-rest-framework-build-an-api-in-15-minutes/
+
 python3 manage.py migrate
 python3 manage.py createsuperuser
 
