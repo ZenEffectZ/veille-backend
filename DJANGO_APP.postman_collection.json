@@ -1,0 +1,562 @@
+{
+	"info": {
+		"_postman_id": "b99bc840-dc85-4f87-94c7-1eaf196bf630",
+		"name": "DJANGO_APP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ0Njg3MzU0LCJqdGkiOiI4MmQ4MWMzNDZmMDU0M2UzYjZiNWE1ZjBjZmE3NDgyYyIsInVzZXJfaWQiOjF9.bxmUAVp9vEoX2bP2LUqxTCNwr0oi8DQRY1k2WGnpkYQ"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/api/reviews"
+			},
+			"response": []
+		},
+		{
+			"name": "posts test",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ0OTYwMTcxLCJqdGkiOiJjYjUwZDM0OWVkYzM0NjZlYTJiOWMzMjM1NjU0YWVkZSIsInVzZXJfaWQiOjJ9.kTum09jXIngG-hI7X-ZOZtA1igeO-fnqnpgHhYDfDkk"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "posts test Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": ""
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/user/1"
+			},
+			"response": []
+		},
+		{
+			"name": "edit psot",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ0NTM4ODcxLCJqdGkiOiI3ZTllMTM3OThhMDk0MjIzYjE4ZjYxOTY5NDJiM2VmMCIsInVzZXJfaWQiOjF9.W2kFyIOcn4GYjZhGjwfexg3ctRO33vqe5m1A6nyC6I8"
+					}
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"name111ree\",\"content\":\"some LOOOOLcontent\",\"created\":\"2022-02-10\",\"updated\":\"2022-02-10\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/reviews/3/"
+			},
+			"response": []
+		},
+		{
+			"name": "delete post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ0Njk2NzY4LCJqdGkiOiI5NTkwZmY3NzFhMDI0MjUyYmZmYjRhNzM4YzRlZjhhZiIsInVzZXJfaWQiOjJ9.szG_TsDi61CVgvESw2Wis2WIgfdqi8fOXRpEC0S7wsY"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"name111ree\",\"content\":\"some LOOOOLcontent\",\"created\":\"2022-02-10\",\"updated\":\"2022-02-10\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/reviews/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "posts Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ0Njg3Nzg1LCJqdGkiOiIxZmRiMTM4ZTU3ODU0YmZjYTViZTYwZDljYjgwYWYxOCIsInVzZXJfaWQiOjF9.b0GDMloz3qlES9b3Yg_MIIrIpFo7tZNqbcnTjKIN3yQ"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"tttt\",\"content\": \"some content\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/posts/"
+			},
+			"response": []
+		},
+		{
+			"name": "posts Copy 2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ0OTU2NjY2LCJqdGkiOiJiMGI1YWMxNWVkYTA0OTAxODMzZGVhNGU1ZmJlYTFhNCIsInVzZXJfaWQiOjF9.WbBM0Qss2bLvlqtHafUAShyxskZhFpka9pXo4kZ61AI"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"i love gam111es\",\n    \"content\": \"some DFerjegiorfjieDFerjegiorfjieDFerjegiorfjieDFerjegiorfjieDFerjegiorfjieDFerjegiorfjie\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/posts/"
+			},
+			"response": []
+		},
+		{
+			"name": "posts Copy 5",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ0OTYwNDg0LCJqdGkiOiI5MTdjZmU0ZjUyMjE0OWQ5OGMxODNjYTdlZDM1MWZkMiIsInVzZXJfaWQiOjJ9.k0_ukMfz7cY8-eMB4sZVfaeUJxx2f0Il2tQ5HfD5Rqo"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "content",
+							"value": "its everyday bro with the disney channel flow! #ad #disney",
+							"type": "default"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/alfred/Downloads/mickey-minnie-16x9.jpeg"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/posts/"
+			},
+			"response": []
+		},
+		{
+			"name": "posts Copy 3",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ0Njk3NDUwLCJqdGkiOiIyZjFjZjdlNWVhOWU0YTY3ODdlYTJhNzM5YTk0YmVjMCIsInVzZXJfaWQiOjF9.5ifKDzjk0FjGHW-txMrMH8gbbMB4_MYfrL0VlZuPiBQ"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"\",\n    \"content\": \"GAYYAGAYAGYAGYAGy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/posts/9"
+			},
+			"response": []
+		},
+		{
+			"name": "posts Copy 4",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ0Njk3MjMzLCJqdGkiOiI4MmQ2YzgxN2U1YTU0OTQ5OWU3YzlhNGY5OGE3NWNkOCIsInVzZXJfaWQiOjF9.yCG8ZdHxx1WCmmT_nyvCE1kLzmRMX-klNdTR1lqjb2Y"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"SECOND POGOGGOGO\",\n    \"content\": \"some DFerjegiorfjie\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/posts/"
+			},
+			"response": []
+		},
+		{
+			"name": "put image",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ0NTM5MDgyLCJqdGkiOiJlZGNmOWJjNmFiZjg0NjZlYWExZDNiZmM1MmVlZWQ0ZCIsInVzZXJfaWQiOjF9.OXs39wgQEEsjQjGe-GKwD-YKCMWYoMbsh9kdWx95l0I"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "image1",
+							"type": "default"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/alfred/Desktop/piano.jpeg"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/image/"
+			},
+			"response": []
+		},
+		{
+			"name": "get image",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ0Njc1NTUwLCJqdGkiOiIwM2Q0YTU2N2E4MDI0ZDI3YWI0ZGY2Y2U1OWU3NWFiNyIsInVzZXJfaWQiOjF9._xjh7764Vi_fvZlvi4KB-x8IjnYHa3HOSma1A4uinXA"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/api/image/"
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"paulgamer\", \"password\": \"paulpaul\", \"password2\": \"paulpaul\", \"email\": \"paul@paul.com\", \"first_name\": \"paul\", \"last_name\": \"polo\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/auth/register/"
+			},
+			"response": []
+		},
+		{
+			"name": "register Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"jakepaul\", \"password\": \"jakepaul123\", \"password2\": \"jakepaul123\", \"email\": \"jakepaul@jakepaul.com\", \"first_name\": \"jakepaul\", \"last_name\": \"jakepaul\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/auth/register/"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"paulgamer\", \"password\": \"paulpaul\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/auth/login/"
+			},
+			"response": []
+		},
+		{
+			"name": "login Copy 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"jakepaul\", \"password\": \"jakepaul123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/auth/login/"
+			},
+			"response": []
+		},
+		{
+			"name": "profile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"paulgamer\", \"password\": \"paulpaul\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/auth/login/"
+			},
+			"response": []
+		},
+		{
+			"name": "login Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/auth/profile"
+			},
+			"response": []
+		},
+		{
+			"name": "JWT",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 97adfb3ed5be7a692c5d9ae632a04163b18e9430",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"paul\", \"password\": \"paul\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/jwt/token"
+			},
+			"response": []
+		},
+		{
+			"name": "JWT refresh",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 97adfb3ed5be7a692c5d9ae632a04163b18e9430",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY0NDAxOTg0NSwiaWF0IjoxNjQzOTMzNDQ1LCJqdGkiOiJmMzIwMGZjOTYwZTM0YjRmOWUwZjMzY2RjM2E5Zjg1ZiIsInVzZXJfaWQiOjF9.2U-UKPycnk0M7kgPLPrQj4CmojOdB9PIQmJ8UzJivnQ\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/jwt/token/refresh/"
+			},
+			"response": []
+		},
+		{
+			"name": "2 posts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date_created\": \"2020-11-19\",\n    \"title\": \"Go to Scdasdasdsadasdhool\",\n    \"body\": \"Go Buy Goods from the market\",\n    \"username\": \"user1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/posts/"
+			},
+			"response": []
+		},
+		{
+			"name": "2 posts Copy 5",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date_created\": \"2020-11-19\",\n    \"title\": \"Go to Scdasdasdsadasdhool\",\n    \"body\": \"Go Buy Goods from the market\",\n    \"username\": \"user1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/posts/"
+			},
+			"response": []
+		},
+		{
+			"name": "2 posts Copy 2",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Go to 1111Scdasdasdsadasdhool\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/posts/1"
+			},
+			"response": []
+		},
+		{
+			"name": "2 posts Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/snippets/"
+			},
+			"response": []
+		},
+		{
+			"name": "2 posts Copy 4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/posts/"
+			},
+			"response": []
+		},
+		{
+			"name": "2 posts Copy 3",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date_created\": \"2020-11-19\",\n    \"title\": \"Go to Scdasdasdsadasdhool\",\n    \"body\": \"Go Buy Goods from the market\",\n    \"username\": \"user1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/posts/1"
+			},
+			"response": []
+		}
+	]
+}
