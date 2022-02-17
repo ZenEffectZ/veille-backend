@@ -93,7 +93,7 @@ class PostItemDetailApiView(APIView):
         '''
         Updates the todo item with given todo_id if exists
         '''
-        todo_instance = PostItem.objects.filter(id=post_id, user_id=request.user.id)
+        todo_instance = self.get_object(post_id, request.user.id)
         if not todo_instance:
             return Response(
                 {"res": "Object with post_id does not exists or not yours"},

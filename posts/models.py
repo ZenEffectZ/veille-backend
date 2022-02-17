@@ -17,8 +17,8 @@ class PostItem(models.Model):
 
 class CommentItem(models.Model):
     title = models.CharField(max_length=255)
-    post = models.ForeignKey(PostItem, on_delete=models.CASCADE, related_name='commentsitems', related_query_name='commentitem')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='commentsitems', related_query_name='commentitem')
+    post_id = models.ForeignKey(PostItem, on_delete=models.CASCADE, related_name='commentsitems', related_query_name='commentitem')
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='commentsitems', related_query_name='commentitem')
     created = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now=True)
 

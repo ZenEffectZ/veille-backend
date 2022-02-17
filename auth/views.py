@@ -15,10 +15,20 @@ class RegisterView(generics.CreateAPIView):
     serializer_class = RegisterSerializer
 
 
-class GetView(generics.ListAPIView):
+# class GetView(generics.ListAPIView):
+#     queryset = User.objects.all()
+#     permission_classes = (AllowAny,)
+#     serializer_class = GetUserSerializer
+
+
+class GetView(APIView):
     queryset = User.objects.all()
     permission_classes = (AllowAny,)
     serializer_class = GetUserSerializer
+    def get(self, request):
+        print(self.request.user)
+        serializer = GetUserSerializer(request.user)
+        return Response(serializer.data)
 
 
 class ChangePasswordView(generics.UpdateAPIView):

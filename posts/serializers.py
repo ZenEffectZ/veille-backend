@@ -14,14 +14,14 @@ class PostItemSerializer(FlexFieldsModelSerializer):
     class Meta:
         model = PostItem
         fields = ['pk', 'content', 'created', 'updated', 'user_id', 'image']
-        expandable_fields = {
-            # 'category': ('reviews.CategorySerializer', {'many': True}),
-            # 'sites': ('reviews.ProductSiteSerializer', {'many': True}),
-            'post': 'posts.CategorySerializer',
-            'user_id': 'posts.UserSerializer',
-            'comments': ('posts.CommentSerializer', {'many': True}),
-            'image': ('posts.ImageSerializer', {'many': True})
-        }
+        # expandable_fields = {
+        #     # 'category': ('reviews.CategorySerializer', {'many': True}),
+        #     # 'sites': ('reviews.ProductSiteSerializer', {'many': True}),
+        #     'post': 'posts.CategorySerializer',
+        #     'user_id': 'posts.UserSerializer',
+        #     'comments': ('posts.CommentSerializer', {'many': True}),
+        #     'image': ('posts.ImageSerializer', {'many': True})
+        # }
 
 
 class UserSerializer(FlexFieldsModelSerializer):
@@ -35,8 +35,8 @@ class CommentItemSerializer(FlexFieldsModelSerializer):
         model = CommentItem
         fields = ['pk', 'title', 'created', 'updated']
         expandable_fields = {
-            'post': 'posts.CategorySerializer',
-            'user': 'posts.UserSerializer'
+            'post_id': 'posts.CategorySerializer',
+            'user_id': 'posts.UserSerializer'
         }
 
 
