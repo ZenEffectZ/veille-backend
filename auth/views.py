@@ -30,6 +30,11 @@ class GetView(APIView):
         serializer = GetUserSerializer(request.user)
         return Response(serializer.data)
 
+class GetListView(generics.ListAPIView):
+    queryset = User.objects.all()
+    permission_classes = (AllowAny,)
+    serializer_class = GetUserSerializer
+
 
 class ChangePasswordView(generics.UpdateAPIView):
     queryset = User.objects.all()
