@@ -14,7 +14,8 @@ class PostItem(models.Model):
     image_ppoi = PPOIField()
     created = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now=True)
-
+    class Meta:
+        ordering = ['-created']
 class CommentItem(models.Model):
     title = models.CharField(max_length=255)
     post_id = models.ForeignKey(PostItem, on_delete=models.CASCADE, related_name='commentsitems', related_query_name='commentitem')
