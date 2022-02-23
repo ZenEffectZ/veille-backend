@@ -28,7 +28,13 @@ SECRET_KEY = 'h3$9j3%^*63(=j-2(@col83qx#qmk%-8f$539dgi=&b&8mptq+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '192.168.2.231',
+    '127.0.0.1',
+    'localhost',
+    '192.168.2.26',
+    '192.168.2.X',
+]
 
 
 # Application definition
@@ -155,6 +161,8 @@ VERSATILEIMAGEFIELD_RENDITION_KEY_SETS = {
 CORS_ALLOWED_ORIGINS = [
     "https://www.test-cors.org",
     'http://localhost:19006',
+    'http://localhost:8000',
+    'http://192.168.2.26:8000'
 ]
 
 
