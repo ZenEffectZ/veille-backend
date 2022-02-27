@@ -1,5 +1,5 @@
 from rest_flex_fields import FlexFieldsModelSerializer
-from .models import PostItem, CommentItem, ImageItem
+from .models import IconItem, IconImage
 from django.contrib.auth.models import User
 from versatileimagefield.serializers import VersatileImageFieldSerializer
 import base64, uuid
@@ -41,48 +41,23 @@ class Base64ImageField(serializers.ImageField):
 
         return extension
 
-class PostItemSerializer(FlexFieldsModelSerializer):
-    image = Base64ImageField(max_length=None, use_url=True)
-    # image = VersatileImageFieldSerializer(
-    #     sizes=[
-    #         ('full_size', 'url'),
-    #         ('thumbnail', 'thumbnail__100x100'),
-    #     ]
-    # )
-    class Meta:
-        model = PostItem
-        fields = ['pk', 'content', 'created', 'updated', 'user_id', 'image']
-        # expandable_fields = {
-        #     # 'category': ('reviews.CategorySerializer', {'many': True}),
-        #     # 'sites': ('reviews.ProductSiteSerializer', {'many': True}),
-        #     'post': 'posts.CategorySerializer',
-        #     'user_id': 'posts.UserSerializer',
-        #     'comments': ('posts.CommentSerializer', {'many': True}),
-        #     'image': ('posts.ImageSerializer', {'many': True})
-        # }
-
-
 class UserSerializer(FlexFieldsModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'username']
 
-
-class CommentItemSerializer(FlexFieldsModelSerializer):
-    class Meta:
-        model = CommentItem
-        fields = ['pk', 'title', 'created', 'updated']
-        expandable_fields = {
-            'post_id': 'posts.CategorySerializer',
-            'user_id': 'posts.UserSerializer'
-        }
-
-
-class ImageItemSerializer(FlexFieldsModelSerializer):
+class IconImageSerializer(FlexFieldsModelSerializer):
     image = VersatileImageFieldSerializer(
         sizes='product_headshot'
     )
 
     class Meta:
-        model = ImageItem
+        model = IconImage
         fields = ['pk', 'name', 'image']
+
+
+class IconItemSerializer(FlexFieldsModelSerializer):
+    image = Base64ImageField(max_length=None, use_url=True)
+    class Meta:
+        model = IconItem
+        fields = ['id', 'user_id', 'image']
