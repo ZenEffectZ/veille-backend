@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from reviews.views import ProductViewSet, ImageViewSet
 from icon.views import IconUserApiView, ImageItemViewSet
-from posts.views import PostItemViewSet, PostItemDetailApiView, PostsUserApiView
+from posts.views import PostItemViewSet, PostItemDetailApiView, PostsUserApiView, CommentItemViewSet
 from rest_framework.routers import DefaultRouter
 from django.conf import settings
 from django.conf.urls.static import static
@@ -21,6 +21,7 @@ urlpatterns = [
     path('user/<int:user_id>', PostsUserApiView.as_view()),
     path('icon', ImageItemViewSet.as_view()),
     path('icon/<int:user_id>', IconUserApiView.as_view()),
+    path('comments/<int:post_id>', CommentItemViewSet.as_view()),
 ]
 
 if settings.DEBUG:

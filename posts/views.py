@@ -142,3 +142,39 @@ class PostsUserApiView(FlexFieldsMixin, APIView):
         postitems = PostItem.objects.filter(user_id=user_id)
         serializer = PostItemSerializer(postitems, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class CommentItemViewSet(FlexFieldsMixin, APIView):
+    # add permission to check if user is authenticated
+    permission_classes = [permissions.IsAuthenticated]
+
+    # 1. List all
+    def get(self, request, post_id, *args, **kwargs):
+        '''
+        List all the todo items for given requested user
+        '''
+        print(request.data.get('content'))
+        # postitems = PostItem.objects.filter(user=request.user.id)
+        comments = CommentItem.objects.filter(post_id=post_id)
+        serializer = CommentItemSerializer(comments, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    # 2. Create
+    def post(self, request, post_id, *args, **kwargs):
+        '''
+        Create the Todo with given todo data
+        '''
+        print("USER:", request.user.id)
+        print(post_id)
+        data = {
+            'title': request.data.get('title'),
+            'post_id': post_id,
+            'user_id': request.user.id,
+            'username': request.user.username,
+        }
+        serializer = CommentItemSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

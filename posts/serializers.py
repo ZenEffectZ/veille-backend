@@ -71,7 +71,7 @@ class UserSerializer(FlexFieldsModelSerializer):
 class CommentItemSerializer(FlexFieldsModelSerializer):
     class Meta:
         model = CommentItem
-        fields = ['pk', 'title', 'created', 'updated']
+        fields = ['pk', 'title', 'created', 'updated', 'user_id', 'post_id', 'username']
         expandable_fields = {
             'post_id': 'posts.CategorySerializer',
             'user_id': 'posts.UserSerializer'
