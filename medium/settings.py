@@ -33,6 +33,7 @@ ALLOWED_HOSTS = [
     'localhost',
     '192.168.2.26',
     '192.168.2.X',
+    '192.168.2.96',
 ]
 
 
@@ -50,7 +51,6 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     'django_filters',
     'versatileimagefield',
-    'reviews',
     'posts',
     'icon',
 ]
